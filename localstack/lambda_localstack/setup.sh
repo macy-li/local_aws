@@ -6,8 +6,6 @@ aws s3 mb s3://macy-localstack-demo --endpoint-url=http://localhost:4566
 # create sqs queue  in localstack
 aws sqs create-queue --queue-name my-queue --endpoint-url=http://localhost:4566
 
-aws sqs list-queues  --endpoint-url=http://localhost:4566
-
 # send message to queue 
 aws sqs send-message --queue-url=http://localhost:4566/000000000000/my-queue \
 --message-body  '{"filename": "file1" , "value" :[2 ,3, 4] }'  --endpoint-url=http://localhost:4566

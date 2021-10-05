@@ -6,7 +6,7 @@ Contains sample code to develop and test AWS applications locally.
     ├── localstack              # examples with localstack
     │   ├── sam_localstack      # use SAM to deploy lambda function ( no trigger event configured ) 
     │   ├── sam_localstack_1    # use SAM to deploy lambda function ( with trigger , SQS as event source )
-    │   └── lambda              # use CLI to deploy and invoke lambda function 
+    │   └── lambda_localstack   # use CLI to deploy and invoke lambda function 
     ├── moto                    # example test cases with moto
     └── Readme.md
 
@@ -32,9 +32,9 @@ Localstack provides the `awslocal` command line, a simple wrapper around the `aw
 pip install awscli-local
 ```
 
-#### Localstack AWS SAM CLI 
+#### Localstack AWS SAM CLI
 Localstack provides the `samlocal` command line, a simple wrapper around the AWS `sam` CLI for use with LocalStack.
-
+To deploy SAM in localstack, you will need to install this library.
 ```
 pip install aws-sam-cli-local
 ```
