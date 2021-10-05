@@ -16,6 +16,20 @@ The easiest way to install LocalStack is via `pip`:
 ```
 pip install localstack
 ```
+
+#### Localstack AWS CLI (optional)
+The project provides the awslocal command line, a simple wrapper around the `aws` command line interface for use with LocalStack.
+```
+pip install awscli-local
+```
+
+#### Localstack AWS SAM CLI 
+The project provides the samlocal command line, a simple wrapper around the `aws sam` CLI for use with LocalStack.
+
+```
+pip install aws-sam-cli-local
+```
+
 ### Running
 
 By default, LocalStack is started inside a Docker container by running:
@@ -23,8 +37,8 @@ By default, LocalStack is started inside a Docker container by running:
 localstack start
 ```
 
-### For more information
-https://github.com/localstack/localstack
+### For more information please refer to the [github](https://github.com/localstack/localstack)
+
 
 ## Moto
 Moto is a library that allows your tests to easily mock out AWS services.
@@ -41,8 +55,8 @@ If you don't care about the number of dependencies, or if you want to mock many 
 $ pip install moto[all]
 ```
 
-### For more information
-https://github.com/spulec/moto
+### For more information please refer to the [github](https://github.com/spulec/moto)
+
 
 
 
