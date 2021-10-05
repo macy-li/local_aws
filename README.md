@@ -3,11 +3,11 @@ Contains sample code to develop and test AWS applications locally.
 
 
     .
-    ├── localstack              # Test files (alternatively `spec` or `tests`)
-    │   ├── sam_localstack      # SAM to deploy lambda in localstack
-    │   ├── sam_localstack_1    # SAM to deploy lambda in localstack ( SQS as event source )
+    ├── localstack              # examples with localstack
+    │   ├── sam_localstack      # SAM to deploy lambda with localstack
+    │   ├── sam_localstack_1    # SAM to deploy lambda with localstack ( SQS as event source )
     │   └── lambda              # test lambda function with localstack 
-    ├── moto                    # test cases with moto
+    ├── moto                    # example test cases with moto
     └── Readme.md
 
 ## localstack
