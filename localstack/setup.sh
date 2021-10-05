@@ -20,15 +20,14 @@ aws sqs send-message --queue-url=http://localhost:4566/000000000000/my-queue \
 --message-body  '{"filename": "file1" , "value" :[2 ,3, 4] }'  --endpoint-url=http://localhost:4566
 
 
-cd demo_localstack/app/; zip function.zip lambda.py
+# create lambda function
+zip function.zip lambda.py
 
-# TO DO: test create lambda function
 aws lambda create-function --function-name test_lambda --runtime python3.8 \
 --role arn:aws:iam::000000000000:role/service-role/demoLambda-role-4y0nwuvw \
 --zip-file=fileb://function.zip --handler lambda.lambda_handler  --endpoint-url=http://localhost:4566 \
---environment Variables="{LOCALSTACK=False}"
+--environment Variables="{LOCALSTACK=True}"
 
-
-# TO DO: test lambda invoke 
+# invoke lambda function
 aws lambda invoke --function-name arn:aws:lambda:ap-southeast-2:000000000000:function:test_lambda \
  --endpoint-url=http://localhost:4566  response.json

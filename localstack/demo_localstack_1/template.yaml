@@ -1,8 +1,8 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  sam-app
-  Sample SAM Template for sam-app
+  SQS is configured as an event source to invoke lambda.
+  Lambda function to process messages in SQS and write output to S3 bucket.
 
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
@@ -24,7 +24,7 @@ Resources:
             BucketName: macy-localstack-demo
       Environment:
         Variables:
-          LOCALSTACK : False
+          LOCALSTACK : True
       Events:
         MySQSEvent:
           Type: SQS

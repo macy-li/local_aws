@@ -2,7 +2,7 @@ import boto3
 import json
 import os
 
-if os.getenv( 'LOCALSTACK' ) == 'true':
+if os.getenv( 'LOCALSTACK' , "").lower() == 'true':
 
     s3 = boto3.resource( 's3', endpoint_url = "http://host.docker.internal:4566/" )
 

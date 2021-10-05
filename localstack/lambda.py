@@ -4,7 +4,7 @@ import os
 
 s3_bucket = 'macy-localstack-demo'
 
-if os.getenv( 'LOCALSTACK' , "").lower() == 'true':
+if os.getenv( 'LOCALSTACK', "" ).lower() == 'true':
 
     queue_url = 'http://host.docker.internal:4566/000000000000/my-queue'
     s3 = boto3.resource( 's3', endpoint_url = "http://host.docker.internal:4566/" )
@@ -34,8 +34,7 @@ def lambda_handler( event, context ):
     out = None
 
     for each_msg in response.get( "Messages", [ ] ):
-
-        body = json.loads(each_msg['Body'].replace("'", "\""))
+        body = json.loads( each_msg[ 'Body' ].replace( "'", "\"" ) )
 
         key = body[ 'filename' ]
 
