@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SQS is configured as an event source to invoke lambda.
+  Lambda function to process messages in SQS and write output to S3 bucket.
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 15
+
+Resources:
+  TestFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: app/
+      Handler: lambda.lambda_handler
+      Runtime: python3.8
+      Policies:
+        - SQSPollerPolicy:
+            QueueName:
+              !GetAtt MySqsQueue.QueueName
+        - S3WritePolicy:
+            BucketName: macy-localstack-demo
+      Environment:
+        Variables:
+          LOCALSTACK : True
+      Events:
+        MySQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt MySqsQueue.Arn
+            BatchSize: 10
+
+  MySqsQueue:
+    Type: AWS::SQS::Queue
+
+Outputs:
+  TestFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt TestFunction.Arn
+
+  MySQSEvent:
+    Description: "SQS Queue ARN"
+    Value: !GetAtt MySqsQueue.Arn
+
+  MySQSEventURL:
+    Description: "SQS Queue URL"
+    Value: 
+      Ref: "MySqsQueue"
