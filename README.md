@@ -1,5 +1,7 @@
 # local_aws
 Contains sample code to develop and test AWS applications locally.
+
+
     .
     ├── localstack              # Test files (alternatively `spec` or `tests`)
     │   ├── sam_localstack      # SAM to deploy lambda in localstack
