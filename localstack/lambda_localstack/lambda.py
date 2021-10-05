@@ -18,6 +18,10 @@ else:
 
 
 def lambda_handler( event, context ):
+    """"
+    Lambda function to read from SQS, process the message and write to S3/
+    """
+
     response = sqs.receive_message(
         QueueUrl = queue_url,
         AttributeNames = [

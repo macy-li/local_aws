@@ -1,5 +1,12 @@
 # local_aws
 Contains sample code to develop and test AWS applications locally.
+    .
+    ├── localstack              # Test files (alternatively `spec` or `tests`)
+    │   ├── sam_localstack      # SAM to deploy lambda in localstack
+    │   ├── sam_localstack_1    # SAM to deploy lambda in localstack ( SQS as event source )
+    │   └── lambda              # test lambda function with localstack 
+    ├── moto                    # test cases with moto
+    └── Readme.md
 
 ## localstack
 localstack is a cloud service emulator that runs in a single container on your laptop or in your CI environment.
@@ -37,7 +44,7 @@ By default, LocalStack is started inside a Docker container by running:
 localstack start
 ```
 
-### For more information please refer to the [github](https://github.com/localstack/localstack)
+### For more information please refer to [loclstack github repo](https://github.com/localstack/localstack)
 
 
 ## Moto
@@ -55,7 +62,7 @@ If you don't care about the number of dependencies, or if you want to mock many 
 $ pip install moto[all]
 ```
 
-### For more information please refer to the [github](https://github.com/spulec/moto)
+### For more information please refer to [moto github repo](https://github.com/spulec/moto)
 
 
 
