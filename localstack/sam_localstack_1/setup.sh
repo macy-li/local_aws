@@ -1,6 +1,6 @@
 
 #  Builds a serverless application and prepare for deployment or local testing
-samlcoal build
+samlocal build
 
 #  invoke lambda function locally with event passed in
 samlocal local invoke -e events/event.json
