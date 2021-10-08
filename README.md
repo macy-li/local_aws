@@ -4,9 +4,9 @@ Contains sample code to develop and test AWS applications locally.
 
     .
     ├── localstack              # examples with localstack
+    │   ├── lambda_localstack   # use CLI to deploy and invoke lambda function (run this first to create resources ) 
     │   ├── sam_localstack      # use SAM to deploy lambda function ( no trigger event configured ) 
-    │   ├── sam_localstack_1    # use SAM to deploy lambda function ( with trigger , SQS as event source )
-    │   └── lambda_localstack   # use CLI to deploy and invoke lambda function 
+    │   └── sam_localstack_1    # use SAM to deploy lambda function ( with trigger , SQS as event source )
     ├── moto                    # example test cases with moto
     └── Readme.md
 
