@@ -6,15 +6,15 @@ s3_bucket = 'macy-localstack-demo'
 
 if os.getenv( 'LOCALSTACK' , "").lower() == 'true':
 
-    queue_url = 'http://host.docker.internal:4566/000000000000/my-queue'
-    s3 = boto3.resource( 's3', endpoint_url = "http://host.docker.internal:4566/" )
-    sqs = boto3.client( 'sqs', endpoint_url = "http://host.docker.internal:4566/", use_ssl = False )
+    queue_url = 'http://localhost:4566/000000000000/my-queue'
+    s3 = boto3.resource( 's3', endpoint_url = "http://localhost:4566/" )
+    sqs = boto3.client( 'sqs', endpoint_url = "http://localhost:4566/",  region_name='ap-southeast-2', use_ssl = False )
 
 
 else:
     queue_url = 'https://sqs.ap-southeast-2.amazonaws.com/623252393094/my-queue'
     s3 = boto3.resource( 's3' )
-    sqs = boto3.client( 'sqs', use_ssl = False )
+    sqs = boto3.client( 'sqs',  region_name='ap-southeast-2',use_ssl = False )
 
 
 def lambda_handler( event, context ):

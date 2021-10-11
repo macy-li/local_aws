@@ -4,7 +4,7 @@ import os
 
 if os.getenv( 'LOCALSTACK' , "").lower() == 'true':
 
-    s3 = boto3.resource( 's3', endpoint_url = "http://host.docker.internal:4566/" )
+    s3 = boto3.resource( 's3', endpoint_url = "http://localhost:4566/" )
 
 else:
 
