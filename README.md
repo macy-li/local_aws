@@ -4,8 +4,8 @@ Contains sample code to develop and test AWS applications locally.
 
     .
     ├── localstack              # examples with localstack
-    │   ├── lambda_localstack   # use CLI to deploy and invoke lambda function (run this first to create resources ) 
-    │   ├── sam_localstack      # use SAM to deploy lambda function ( no trigger event configured ) 
+    │   ├── lambda_localstack   # use CLI to deploy and invoke lambda function (run this first to create resources )
+    │   ├── sam_localstack      # use SAM to deploy lambda function ( no trigger event configured )
     │   └── sam_localstack_1    # use SAM to deploy lambda function ( with trigger , SQS as event source )
     ├── moto                    # example test cases with moto
     └── Readme.md
@@ -47,6 +47,8 @@ localstack start
 
 For more information please refer to [localstack github repo](https://github.com/localstack/localstack)
 
+#### Running Docker on Docker-machine
+Please forword port 4566 on docker-machine to localhost port 4566 under Settings -> Network -> Advanced -> Port Forward
 
 ## Moto
 Moto is a library that allows your tests to easily mock out AWS services.
@@ -57,7 +59,7 @@ To install moto for a specific service:
 ```console
 $ pip install moto[ec2,s3]
 ```
-This will install Moto, and the dependencies required for that specific service.  
+This will install Moto, and the dependencies required for that specific service.
 If you don't care about the number of dependencies, or if you want to mock many AWS services:
 ```console
 $ pip install moto[all]
