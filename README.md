@@ -47,8 +47,8 @@ localstack start
 
 For more information please refer to [localstack github repo](https://github.com/localstack/localstack)
 
-#### Port forwardinn if running Docker with Docker-machine on Virtualbox 
-Forword port 4566 on docker-machine to localhost port 4566 under Settings -> Network -> Advanced -> Port Forward.
+#### Port forwarding if running Docker with Docker-machine on Virtualbox 
+Forword port 4566 on docker-machine to localhost port 4566 under **Settings -> Network -> Advanced -> Port Forward**.
 
 ## Moto
 Moto is a library that allows your tests to easily mock out AWS services.
